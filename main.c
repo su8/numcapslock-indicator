@@ -14,9 +14,10 @@ int main(void) {
   XGetKeyboardControl(display, &x);
   XCloseDisplay(display);
 
-  printf("Num %s Caps %s\n",
+  printf("Num %s Caps %s Scroll %s\n",
     (x.led_mask & 2 ? "On" : "Off"),
-    (x.led_mask & 1 ? "On" : "Off"));
+    (x.led_mask & 1 ? "On" : "Off"),
+    (x.led_mask & 4 ? "On" : "Off"));
 
   return EXIT_SUCCESS;
 }
